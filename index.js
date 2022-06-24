@@ -1,27 +1,18 @@
-const url = 'https://twitter.com/explore/tabs/trending';
-const getTrends = require('./lib/scraper')
+const cronJob = require('./lib/cronjob')
+const http = require('http')
 const fs = require('fs/promises')
-const cron = require('node-cron')
 
-async function storeTrends() {
-  const cur_trends = await getTrends(url);
-  const all_trends_json = await fs.readFile('./db.json');
-  let all_trends = JSON.parse(all_trends_json);
+cronJob();
 
-  if(all_trends.length >= 12)
-    all_trends = []
+const port = process.env.PORT || 3000
 
-  all_trends.push(cur_trends);
+const server = http.createServer(async (req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'application/json')
+  const content = await fs.readFile('./db.json');
+  res.end(content)
+})
 
-  await fs.writeFile('./db.json', JSON.stringify(all_trends, null, 2));
-}
-
-cron.schedule('0 * * * *', async () => {
-  console.log('Running...');
-  // storeTrends();
-  try {
-    await storeTrends();
-  } catch (err) {
-    console.log('error occurred');
-  }
-});
+server.listen(port, () => {
+  console.log(`Server running at port ${port}`)
+})
