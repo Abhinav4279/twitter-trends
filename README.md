@@ -1,6 +1,6 @@
 # twitter-trends
 
-> API to get last 24 hrs top twitter trends in India.
+> API to get last 24 hrs top twitter trends.
 
 * Node backend runs cron job each hour and scrapes top twitter trends using headless chrome(puppeteer).
 * Saves into `db.json` file using node file module.
