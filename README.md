@@ -2,7 +2,11 @@
 
 > API to get last 24 hrs top twitter trends in India.
 
+Node backend runs cron job each hour and scrapes top twitter trends using headless chrome(puppeteer).\
+Saves into db.json file using node file module.\
+The json file is served through http server on localhost.
 
+---
 ## Installation
 `git clone https://github.com/Abhinav4279/twitter-trends`\
 `cd twitter-trends`\
@@ -88,38 +92,6 @@
   [
     "#zubairarrest",
     "#zoobear",
-    "#InnovateWithTHub",
-    "#NavrajHans",
-    "#PolycabBLDCFans",
-    "Nupur Sharma",
-    "JoyEBike INDvsIRE",
-    "cbi pbs key 2 ssrcase mystery",
-    "Alt News",
-    "HBD JASMIN BHASIN",
-    "दिल्ली पुलिस",
-    "Hindu Gods",
-    "Youth Upliftment Camps",
-    "spine of the nation",
-    "Nelson Piquet",
-    "Kabir is God",
-    "CBI Probe AnilD Vaze InSSRCase",
-    "sushant our sunshine",
-    "Ketaki",
-    "Cilic",
-    "Journalist",
-    "Matteo Berrettini",
-    "My Education",
-    "नरसिम्हा राव",
-    "respect motherhood",
-    "श्री राम",
-    "Arnab",
-    "Vrinda Grover",
-    "B.Ed",
-    "Teesta"
-  ],
-  [
-    "#zubairarrest",
-    "#zoobear",
     "#NavrajHans",
     "#InnovateWithTHub",
     "#IndiaWithDelhiPolice",
@@ -147,38 +119,6 @@
     "Arnab",
     "Vrinda Grover",
     "teesta",
-    "Berrettini"
-  ],
-  [
-    "#zubairarrest",
-    "#NavrajHans",
-    "#zoobear",
-    "#InnovateWithTHub",
-    "#IndiaWithDelhiPolice",
-    "Nupur",
-    "JoyEBike INDvsIRE",
-    "CBI PBS Key 2 SSRCase Mystery",
-    "HBD JASMIN BHASIN",
-    "Alt News",
-    "दिल्ली पुलिस",
-    "Hindu Gods",
-    "Youth Upliftment Camps",
-    "Spine Of The Nation",
-    "Nelson Piquet",
-    "cbi probe anild vaze inssrcase",
-    "Kabir is God",
-    "Cilic",
-    "sushant our sunshine",
-    "Ketaki",
-    "Journalist",
-    "My Education",
-    "नरसिम्हा राव",
-    "respect motherhood",
-    "b.ed",
-    "श्री राम",
-    "Arnab",
-    "Vrinda Grover",
-    "Teesta",
     "Berrettini"
   ],
   [
